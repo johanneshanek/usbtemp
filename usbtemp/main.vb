@@ -1,15 +1,17 @@
 ﻿Imports System.IO
 Imports System.Xml.Serialization
 
-Public Class Form1
+Public Class Main
 
     Public Device As USBDevice
     Private WithEvents InstallationProcess As Process
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If Not IO.File.Exists("C:\Program Files (x86)\Measurement Computing\DAQ\inscal32.exe") Then
-            IO.File.WriteAllBytes("%USERPROFILE%\Downloads\icalsetup.exe", My.Resources.icalsetup)
-            InstallationProcess = Process.Start("%USERPROFILE%\Downloads\icalsetup.exe")
+            Dim downloadpath As String = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) & "\Downloads\"
+            IO.File.WriteAllBytes(downloadpath & "icalsetup.exe", My.Resources.icalsetup)
+            If IO.File.Exists(downloadpath & "icalsetup.exe") Then _
+            InstallationProcess = Process.Start(downloadpath & "icalsetup.exe")
         Else
             Device = New USBDevice(0) 'Index 0 für erstes Board
             If Device.Ready Then
@@ -112,6 +114,15 @@ Public Class Form1
         Else
             Text = "Not USB-Device found!"
         End If
+    End Sub
+
+    Private Sub ToolStripLabel1_Click(sender As Object, e As EventArgs) Handles ToolStripLabel1.Click
+        AboutBox1.ShowDialog(Me)
+    End Sub
+
+    Private Sub ToolStripComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ToolStripComboBox1.SelectedIndexChanged
+        Dim value As Integer = ToolStripComboBox1.Text
+        Timer1.Interval = value * 1000
     End Sub
 
 End Class
