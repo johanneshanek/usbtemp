@@ -7,25 +7,24 @@ Public Class Main
     Private WithEvents InstallationProcess As Process
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Initialize()
         If Not IO.File.Exists("C:\Program Files (x86)\Measurement Computing\DAQ\inscal32.exe") Then
             Dim downloadpath As String = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) & "\Downloads\"
             IO.File.WriteAllBytes(downloadpath & "icalsetup.exe", My.Resources.icalsetup)
             If IO.File.Exists(downloadpath & "icalsetup.exe") Then _
-            InstallationProcess = Process.Start(downloadpath & "icalsetup.exe")
+            Process.Start(downloadpath & "icalsetup.exe")
         Else
-            Device = New USBDevice(0) 'Index 0 für erstes Board
             If Device.Ready Then
                 Text = Device.Name
-                Initialize()
             Else
-                Text = "Not USB-Device found!"
+                Text = "No USB-Device connected!"
             End If
         End If
     End Sub
 
     Private Sub Initialize()
+        Device = New USBDevice(0) 'Index 0 für erstes Board
         ZedGraphControl1.GraphPane.CurveList.Clear()
-
         For i As Integer = 0 To 7
             ZedGraphControl1.GraphPane.CurveList.Add(New ZedGraph.LineItem("Channel " & i + 1) With
                                                      {.Color = GetColor(i),
@@ -38,6 +37,8 @@ Public Class Main
         Next
 
         ZedGraphControl1.GraphPane.XAxis.Type = ZedGraph.AxisType.Date
+        ZedGraphControl1.GraphPane.XAxis.Title.Text = "Date"
+        ZedGraphControl1.GraphPane.YAxis.Title.Text = "Temperature [°C]"
         ZedGraphControl1.GraphPane.Title.Text = "USB temp Data Plot"
     End Sub
 
@@ -66,10 +67,14 @@ Public Class Main
 
     Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
         Timer1.Start()
+        ToolStripButton1.Enabled = False
+        ToolStripButton2.Enabled = True
     End Sub
 
     Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
         Timer1.Stop()
+        ToolStripButton1.Enabled = True
+        ToolStripButton2.Enabled = False
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -86,14 +91,16 @@ Public Class Main
     End Sub
 
     Private Sub ToolStripButton3_Click(sender As Object, e As EventArgs) Handles ToolStripButton3.Click
-        Timer1.Stop()
-        Device.Clear()
-        For i As Integer = 0 To 7
-            ZedGraphControl1.GraphPane.CurveList(i).Clear()
-            Dim cb As CheckBox = Controls.Find("CheckBox" & i + 1, True).First
-            cb.Text = "Channel " & i + 1
-        Next i
-        ZedGraphControl1.Refresh()
+        If MsgBox("Sicher alles löschen?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+            Timer1.Stop()
+            Device.Clear()
+            For i As Integer = 0 To 7
+                ZedGraphControl1.GraphPane.CurveList(i).Clear()
+                Dim cb As CheckBox = Controls.Find("CheckBox" & i + 1, True).First
+                cb.Text = "Channel " & i + 1
+            Next i
+            ZedGraphControl1.Refresh()
+        End If
     End Sub
 
     Private Sub ToolStripButton4_Click(sender As Object, e As EventArgs) Handles ToolStripButton4.Click
@@ -106,35 +113,26 @@ Public Class Main
         Process.Start("C:\Program Files (x86)\Measurement Computing\DAQ\inscal32.exe")
     End Sub
 
-    Private Sub InstallationProcess_Exited(sender As Object, e As EventArgs) Handles InstallationProcess.Exited
-        Device = New USBDevice(0) 'Index 0 für erstes Board
-        If Device.Ready Then
-            Text = Device.Name
-            Initialize()
-        Else
-            Text = "Not USB-Device found!"
-        End If
-    End Sub
-
-    Private Sub ToolStripLabel1_Click(sender As Object, e As EventArgs) Handles ToolStripLabel1.Click
-        AboutBox1.ShowDialog(Me)
-    End Sub
-
     Private Sub ToolStripComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ToolStripComboBox1.SelectedIndexChanged
         Dim value As Integer = ToolStripComboBox1.Text
         Timer1.Interval = value * 1000
     End Sub
 
+    Private Sub ToolStripButton6_Click(sender As Object, e As EventArgs) Handles ToolStripButton6.Click
+        AboutBox1.ShowDialog(Me)
+    End Sub
+
 End Class
 
 Public Class USBDevice
+    Private Index As Integer
     Private DaqBoard As MccDaq.MccBoard
     Public Channel(7) As Channel
     Public Ready As Boolean = True
 
     Public ReadOnly Property Name() As String
         Get
-            Return DaqBoard.BoardName & " :ID=0"
+            Return DaqBoard.BoardName & " :ID=" & Index
         End Get
     End Property
 
@@ -142,14 +140,14 @@ Public Class USBDevice
     End Sub
 
     Public Sub New(Index As Integer)
+        Me.Index = Index
         DaqBoard = New MccDaq.MccBoard(Index)
         For i As Integer = 0 To 7
             Channel(i) = New Channel
             If GetTemperature(i).Value = -9999 Then Channel(i).Connected = False
-            If GetTemperature(i).Value = -9000 Then
+            If GetTemperature(i).Value = 0 Then
                 Channel(i).Connected = False
                 Ready = False
-                Exit For
             End If
         Next
     End Sub

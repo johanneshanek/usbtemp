@@ -33,7 +33,7 @@
     <MinimumRequiredVersion>1.1.2.4</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>11</ApplicationRevision>
+    <ApplicationRevision>12</ApplicationRevision>
     <ApplicationVersion>1.1.2.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -183,6 +183,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Resources\temperature_icon-icons.com_53617.ico" />
+    <None Include="Resources\icons8-informationen-24.png" />
     <Content Include="temperature_icon-icons.com_53617.ico" />
     <None Include="Resources\logo.bmp" />
     <None Include="Resources\icons8-exportieren-24.png" />

@@ -37,6 +37,11 @@ usbtemp
   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:usbtemp.My.Resources.Resources.icons8_informationen_24">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:usbtemp.My.Resources.Resources.icons8_stop_50">
 <summary>
   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
