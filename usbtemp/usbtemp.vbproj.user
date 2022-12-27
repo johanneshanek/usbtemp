@@ -2,9 +2,9 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <PublishUrlHistory>ftp://ftp.hidrive.strato.com/users/popelution/Entwickler/apps/usb-temp/|ftp://ftp.hidrive.strato.com/users/popelution/Entwickler/apps/|ftp.hidrive.strato.com\|E:\HiDrive\Entwickler\apps\usb-temp\|E:\HiDrive\Entwickler\apps\</PublishUrlHistory>
-    <InstallUrlHistory>https://my.hidrive.com/share/qzc45.ewbv/</InstallUrlHistory>
+    <InstallUrlHistory>https://my.hidrive.com/share/az7qlvyux4/|https://my.hidrive.com/share/qzc45.ewbv/</InstallUrlHistory>
     <SupportUrlHistory />
-    <UpdateUrlHistory />
+    <UpdateUrlHistory>https://my.hidrive.com/share/az7qlvyux4/|https://my.hidrive.com/share/qzc45.ewbv/</UpdateUrlHistory>
     <BootstrapperUrlHistory />
     <ErrorReportUrlHistory />
     <FallbackCulture>de-DE</FallbackCulture>
