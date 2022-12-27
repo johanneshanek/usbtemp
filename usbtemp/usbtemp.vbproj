@@ -183,6 +183,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Resources\temperature_icon-icons.com_53617.ico" />
+    <None Include="Resources\icons8-informationen-24.png" />
     <Content Include="temperature_icon-icons.com_53617.ico" />
     <None Include="Resources\logo.bmp" />
     <None Include="Resources\icons8-exportieren-24.png" />
