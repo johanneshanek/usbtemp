@@ -10,7 +10,7 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyTitle("usbtemp")>
 <Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("")>
+<Assembly: AssemblyCompany("Blaues Sofa")>
 <Assembly: AssemblyProduct("usbtemp")>
 <Assembly: AssemblyCopyright("Copyright ©  2022")>
 <Assembly: AssemblyTrademark("")>
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' indem Sie "*" wie unten gezeigt eingeben:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("1.1.1.1")>
-<Assembly: AssemblyFileVersion("1.1.1.1")>
+<Assembly: AssemblyVersion("1.1.2.4")>
+<Assembly: AssemblyFileVersion("1.1.2.4")>

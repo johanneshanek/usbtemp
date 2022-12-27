@@ -15,7 +15,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>E:\HiDrive\Entwickler\apps\usb-temp\</PublishUrl>
+    <PublishUrl>ftp://ftp.hidrive.strato.com/users/popelution/Entwickler/apps/usb-temp/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -23,16 +23,17 @@
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
+    <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>https://my.hidrive.com/share/qzc45.ewbv/</InstallUrl>
     <ProductName>USB-Temp</ProductName>
     <PublisherName>Blaues Sofa</PublisherName>
     <SuiteName>USB-Temp</SuiteName>
+    <MinimumRequiredVersion>1.1.2.4</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>3</ApplicationRevision>
-    <ApplicationVersion>1.1.1.%2a</ApplicationVersion>
+    <ApplicationRevision>7</ApplicationRevision>
+    <ApplicationVersion>1.1.2.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -81,6 +82,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>temperature_icon-icons.com_53617.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MccDaq, Version=2.9.0.0, Culture=neutral, PublicKeyToken=a37eefcf5c6ca10a, processorArchitecture=MSIL">
@@ -165,6 +169,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="License-LGPL.txt" />
+    <Content Include="temperature_icon-icons.com_53617.ico" />
+    <None Include="Resources\logo.bmp" />
     <None Include="Resources\icons8-exportieren-24.png" />
     <None Include="Resources\icons8-symbol_-löschen-24.png" />
     <None Include="Resources\icons8-stop-50.png" />

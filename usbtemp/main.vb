@@ -3,11 +3,16 @@ Imports System.Xml.Serialization
 
 Public Class Form1
 
-    Public Device As New USBDevice
+    Public Device As USBDevice
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Text = Device.Name
-        Initialize()
+        Device = New USBDevice(0) 'Index 0 für erstes Board
+        If Device.Ready Then
+            Text = Device.Name
+            Initialize()
+        Else
+            Text = "Not USB-Device found!"
+        End If
     End Sub
 
     Private Sub Initialize()
@@ -89,28 +94,46 @@ Public Class Form1
         End Using
     End Sub
 
+    Private Sub ToolStripButton5_Click(sender As Object, e As EventArgs) Handles ToolStripButton5.Click
+        Process.Start("C:\Program Files (x86)\Measurement Computing\DAQ\inscal32.exe")
+    End Sub
+
 End Class
 
 Public Class USBDevice
-    Private DaqBoard As New MccDaq.MccBoard(0)
+    Private DaqBoard As MccDaq.MccBoard
     Public Channel(7) As Channel
+    Public Ready As Boolean = True
 
     Public ReadOnly Property Name() As String
         Get
-            Return DaqBoard.BoardName
+            Return DaqBoard.BoardName & " :ID=0"
         End Get
     End Property
 
     Public Sub New()
+    End Sub
+
+    Public Sub New(Index As Integer)
+        DaqBoard = New MccDaq.MccBoard(Index)
         For i As Integer = 0 To 7
             Channel(i) = New Channel
             If GetTemperature(i).Value = -9999 Then Channel(i).Connected = False
+            If GetTemperature(i).Value = -9000 Then
+                Channel(i).Connected = False
+                Ready = False
+                Exit For
+            End If
         Next
     End Sub
 
     Private Function GetTemperature(ChannelIndex As Integer) As datapoint
         Dim Value As Single
-        DaqBoard.TIn(ChannelIndex, MccDaq.TempScale.Celsius, Value, MccDaq.ThermocoupleOptions.NoFilter)
+        Try
+            DaqBoard.TIn(ChannelIndex, MccDaq.TempScale.Celsius, Value, MccDaq.ThermocoupleOptions.NoFilter)
+        Catch ex As Exception
+            Value = -9000
+        End Try
         Return New datapoint(Date.Now, Value)
     End Function
 
@@ -149,11 +172,15 @@ Public Class Channel
     Public Connected As Boolean = True
     Public data As New List(Of datapoint)
     Public Name As String
+    Public Sub New()
+    End Sub
 End Class
 
 Public Class datapoint
     Public MeasurementDate As Date
     Public Value As Double
+    Public Sub New()
+    End Sub
     Public Sub New(Value As Double)
         MeasurementDate = Date.Now
         Me.Value = Value
