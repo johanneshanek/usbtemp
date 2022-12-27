@@ -33,14 +33,15 @@ Partial Class Form1
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.ZedGraphControl1 = New ZedGraph.ZedGraphControl()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripButton4 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripButton5 = New System.Windows.Forms.ToolStripButton()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.ZedGraphControl1 = New ZedGraph.ZedGraphControl()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -172,45 +173,12 @@ Partial Class Form1
         '
         'ToolStrip1
         '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripButton2, Me.ToolStripButton3, Me.ToolStripSeparator1, Me.ToolStripButton4})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripButton2, Me.ToolStripButton3, Me.ToolStripSeparator1, Me.ToolStripButton4, Me.ToolStripButton5})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(266, 25)
         Me.ToolStrip1.TabIndex = 0
         Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 25)
-        '
-        'StatusStrip1
-        '
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 428)
-        Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(266, 22)
-        Me.StatusStrip1.TabIndex = 9
-        Me.StatusStrip1.Text = "StatusStrip1"
-        '
-        'ZedGraphControl1
-        '
-        Me.ZedGraphControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ZedGraphControl1.Location = New System.Drawing.Point(0, 0)
-        Me.ZedGraphControl1.Name = "ZedGraphControl1"
-        Me.ZedGraphControl1.ScrollGrace = 0R
-        Me.ZedGraphControl1.ScrollMaxX = 0R
-        Me.ZedGraphControl1.ScrollMaxY = 0R
-        Me.ZedGraphControl1.ScrollMaxY2 = 0R
-        Me.ZedGraphControl1.ScrollMinX = 0R
-        Me.ZedGraphControl1.ScrollMinY = 0R
-        Me.ZedGraphControl1.ScrollMinY2 = 0R
-        Me.ZedGraphControl1.Size = New System.Drawing.Size(530, 450)
-        Me.ZedGraphControl1.TabIndex = 0
-        Me.ZedGraphControl1.UseExtendedPrintDialog = True
-        '
-        'Timer1
-        '
-        Me.Timer1.Interval = 500
         '
         'ToolStripButton1
         '
@@ -239,6 +207,11 @@ Partial Class Form1
         Me.ToolStripButton3.Size = New System.Drawing.Size(23, 22)
         Me.ToolStripButton3.Text = "Alles löschen"
         '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 25)
+        '
         'ToolStripButton4
         '
         Me.ToolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
@@ -247,6 +220,44 @@ Partial Class Form1
         Me.ToolStripButton4.Name = "ToolStripButton4"
         Me.ToolStripButton4.Size = New System.Drawing.Size(23, 22)
         Me.ToolStripButton4.Text = "Export"
+        '
+        'ToolStripButton5
+        '
+        Me.ToolStripButton5.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.ToolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripButton5.Image = Global.usbtemp.My.Resources.Resources.logo
+        Me.ToolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton5.Name = "ToolStripButton5"
+        Me.ToolStripButton5.Size = New System.Drawing.Size(23, 22)
+        Me.ToolStripButton5.Text = "Run InstaCal"
+        '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 428)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(266, 22)
+        Me.StatusStrip1.TabIndex = 9
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'ZedGraphControl1
+        '
+        Me.ZedGraphControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ZedGraphControl1.Location = New System.Drawing.Point(0, 0)
+        Me.ZedGraphControl1.Name = "ZedGraphControl1"
+        Me.ZedGraphControl1.ScrollGrace = 0R
+        Me.ZedGraphControl1.ScrollMaxX = 0R
+        Me.ZedGraphControl1.ScrollMaxY = 0R
+        Me.ZedGraphControl1.ScrollMaxY2 = 0R
+        Me.ZedGraphControl1.ScrollMinX = 0R
+        Me.ZedGraphControl1.ScrollMinY = 0R
+        Me.ZedGraphControl1.ScrollMinY2 = 0R
+        Me.ZedGraphControl1.Size = New System.Drawing.Size(530, 450)
+        Me.ZedGraphControl1.TabIndex = 0
+        Me.ZedGraphControl1.UseExtendedPrintDialog = True
+        '
+        'Timer1
+        '
+        Me.Timer1.Interval = 500
         '
         'Form1
         '
@@ -285,4 +296,5 @@ Partial Class Form1
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents ToolStripButton4 As ToolStripButton
+    Friend WithEvents ToolStripButton5 As ToolStripButton
 End Class
