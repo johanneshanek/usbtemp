@@ -1,4 +1,7 @@
-﻿Public Class Form1
+﻿Imports System.IO
+Imports System.Xml.Serialization
+
+Public Class Form1
 
     Public Device As New USBDevice
 
@@ -80,6 +83,12 @@
         ZedGraphControl1.Refresh()
     End Sub
 
+    Private Sub ToolStripButton4_Click(sender As Object, e As EventArgs) Handles ToolStripButton4.Click
+        Using sfd As New SaveFileDialog
+            If sfd.ShowDialog = DialogResult.OK Then Device.Export(sfd.FileName)
+        End Using
+    End Sub
+
 End Class
 
 Public Class USBDevice
@@ -115,6 +124,23 @@ Public Class USBDevice
         Dim dp As datapoint = GetTemperature(Index)
         Channel(Index).data.Add(dp)
         Return dp
+    End Function
+
+    Public Sub Export(FileName As String)
+        Dim xml As New XmlSerializer(GetType(USBDevice))
+        Using fs As New FileStream(IO.Path.ChangeExtension(FileName, ".xml"), FileMode.Create)
+            xml.Serialize(fs, Me)
+            fs.Close()
+        End Using
+    End Sub
+
+    Public Shared Function Load(ByVal filename As String) As USBDevice
+        Dim xml As New XmlSerializer(GetType(USBDevice))
+        Using fs As New FileStream(filename, FileMode.Open)
+            Dim q As USBDevice = xml.Deserialize(fs)
+            fs.Close()
+            Return q
+        End Using
     End Function
 
 End Class
