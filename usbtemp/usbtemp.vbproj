@@ -26,14 +26,14 @@
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>https://my.hidrive.com/share/az7qlvyux4/</InstallUrl>
-    <UpdateUrl>https://my.hidrive.com/share/qzc45.ewbv/</UpdateUrl>
+    <UpdateUrl>https://my.hidrive.com/share/az7qlvyux4/</UpdateUrl>
     <ProductName>USB-Temp</ProductName>
     <PublisherName>Blaues Sofa</PublisherName>
     <SuiteName>USB-Temp</SuiteName>
-    <MinimumRequiredVersion>1.1.2.4</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.1.2.13</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>13</ApplicationRevision>
+    <ApplicationRevision>14</ApplicationRevision>
     <ApplicationVersion>1.1.2.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>

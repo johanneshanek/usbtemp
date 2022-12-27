@@ -122,6 +122,14 @@ Public Class Main
         AboutBox1.ShowDialog(Me)
     End Sub
 
+    Private Sub Main_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        If MsgBox("Sure u want to close and stop measurement?", vbYesNo) = MsgBoxResult.Yes Then
+            e.Cancel = False
+        Else
+            e.Cancel = True
+        End If
+    End Sub
+
 End Class
 
 Public Class USBDevice
