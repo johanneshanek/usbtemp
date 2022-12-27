@@ -4,14 +4,20 @@ Imports System.Xml.Serialization
 Public Class Form1
 
     Public Device As USBDevice
+    Private WithEvents InstallationProcess As Process
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Device = New USBDevice(0) 'Index 0 für erstes Board
-        If Device.Ready Then
-            Text = Device.Name
-            Initialize()
+        If Not IO.File.Exists("C:\Program Files (x86)\Measurement Computing\DAQ\inscal32.exe") Then
+            IO.File.WriteAllBytes("%USERPROFILE%\Downloads\icalsetup.exe", My.Resources.icalsetup)
+            InstallationProcess = Process.Start("%USERPROFILE%\Downloads\icalsetup.exe")
         Else
-            Text = "Not USB-Device found!"
+            Device = New USBDevice(0) 'Index 0 für erstes Board
+            If Device.Ready Then
+                Text = Device.Name
+                Initialize()
+            Else
+                Text = "Not USB-Device found!"
+            End If
         End If
     End Sub
 
@@ -96,6 +102,16 @@ Public Class Form1
 
     Private Sub ToolStripButton5_Click(sender As Object, e As EventArgs) Handles ToolStripButton5.Click
         Process.Start("C:\Program Files (x86)\Measurement Computing\DAQ\inscal32.exe")
+    End Sub
+
+    Private Sub InstallationProcess_Exited(sender As Object, e As EventArgs) Handles InstallationProcess.Exited
+        Device = New USBDevice(0) 'Index 0 für erstes Board
+        If Device.Ready Then
+            Text = Device.Name
+            Initialize()
+        Else
+            Text = "Not USB-Device found!"
+        End If
     End Sub
 
 End Class
