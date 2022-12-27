@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+Partial Class Main
     Inherits System.Windows.Forms.Form
 
     'Das Formular überschreibt den Löschvorgang, um die Komponentenliste zu bereinigen.
@@ -23,6 +23,7 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.CheckBox8 = New System.Windows.Forms.CheckBox()
         Me.CheckBox7 = New System.Windows.Forms.CheckBox()
@@ -39,9 +40,11 @@ Partial Class Form1
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripButton4 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton5 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ZedGraphControl1 = New ZedGraph.ZedGraphControl()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.ToolStripComboBox1 = New System.Windows.Forms.ToolStripComboBox()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -72,7 +75,7 @@ Partial Class Form1
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.ZedGraphControl1)
         Me.SplitContainer1.Size = New System.Drawing.Size(800, 450)
-        Me.SplitContainer1.SplitterDistance = 266
+        Me.SplitContainer1.SplitterDistance = 299
         Me.SplitContainer1.TabIndex = 0
         '
         'CheckBox8
@@ -82,7 +85,7 @@ Partial Class Form1
         Me.CheckBox8.Dock = System.Windows.Forms.DockStyle.Top
         Me.CheckBox8.Location = New System.Drawing.Point(0, 207)
         Me.CheckBox8.Name = "CheckBox8"
-        Me.CheckBox8.Size = New System.Drawing.Size(266, 26)
+        Me.CheckBox8.Size = New System.Drawing.Size(299, 26)
         Me.CheckBox8.TabIndex = 8
         Me.CheckBox8.Text = "Channel 8"
         Me.CheckBox8.UseVisualStyleBackColor = True
@@ -94,7 +97,7 @@ Partial Class Form1
         Me.CheckBox7.Dock = System.Windows.Forms.DockStyle.Top
         Me.CheckBox7.Location = New System.Drawing.Point(0, 181)
         Me.CheckBox7.Name = "CheckBox7"
-        Me.CheckBox7.Size = New System.Drawing.Size(266, 26)
+        Me.CheckBox7.Size = New System.Drawing.Size(299, 26)
         Me.CheckBox7.TabIndex = 7
         Me.CheckBox7.Text = "Channel 7"
         Me.CheckBox7.UseVisualStyleBackColor = True
@@ -106,7 +109,7 @@ Partial Class Form1
         Me.CheckBox6.Dock = System.Windows.Forms.DockStyle.Top
         Me.CheckBox6.Location = New System.Drawing.Point(0, 155)
         Me.CheckBox6.Name = "CheckBox6"
-        Me.CheckBox6.Size = New System.Drawing.Size(266, 26)
+        Me.CheckBox6.Size = New System.Drawing.Size(299, 26)
         Me.CheckBox6.TabIndex = 6
         Me.CheckBox6.Text = "Channel 6"
         Me.CheckBox6.UseVisualStyleBackColor = True
@@ -118,7 +121,7 @@ Partial Class Form1
         Me.CheckBox5.Dock = System.Windows.Forms.DockStyle.Top
         Me.CheckBox5.Location = New System.Drawing.Point(0, 129)
         Me.CheckBox5.Name = "CheckBox5"
-        Me.CheckBox5.Size = New System.Drawing.Size(266, 26)
+        Me.CheckBox5.Size = New System.Drawing.Size(299, 26)
         Me.CheckBox5.TabIndex = 5
         Me.CheckBox5.Text = "Channel 5"
         Me.CheckBox5.UseVisualStyleBackColor = True
@@ -130,7 +133,7 @@ Partial Class Form1
         Me.CheckBox4.Dock = System.Windows.Forms.DockStyle.Top
         Me.CheckBox4.Location = New System.Drawing.Point(0, 103)
         Me.CheckBox4.Name = "CheckBox4"
-        Me.CheckBox4.Size = New System.Drawing.Size(266, 26)
+        Me.CheckBox4.Size = New System.Drawing.Size(299, 26)
         Me.CheckBox4.TabIndex = 4
         Me.CheckBox4.Text = "Channel 4"
         Me.CheckBox4.UseVisualStyleBackColor = True
@@ -142,7 +145,7 @@ Partial Class Form1
         Me.CheckBox3.Dock = System.Windows.Forms.DockStyle.Top
         Me.CheckBox3.Location = New System.Drawing.Point(0, 77)
         Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(266, 26)
+        Me.CheckBox3.Size = New System.Drawing.Size(299, 26)
         Me.CheckBox3.TabIndex = 3
         Me.CheckBox3.Text = "Channel 3"
         Me.CheckBox3.UseVisualStyleBackColor = True
@@ -154,7 +157,7 @@ Partial Class Form1
         Me.CheckBox2.Dock = System.Windows.Forms.DockStyle.Top
         Me.CheckBox2.Location = New System.Drawing.Point(0, 51)
         Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(266, 26)
+        Me.CheckBox2.Size = New System.Drawing.Size(299, 26)
         Me.CheckBox2.TabIndex = 2
         Me.CheckBox2.Text = "Channel 2"
         Me.CheckBox2.UseVisualStyleBackColor = True
@@ -166,17 +169,17 @@ Partial Class Form1
         Me.CheckBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.CheckBox1.Location = New System.Drawing.Point(0, 25)
         Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(266, 26)
+        Me.CheckBox1.Size = New System.Drawing.Size(299, 26)
         Me.CheckBox1.TabIndex = 1
         Me.CheckBox1.Text = "Channel 1"
         Me.CheckBox1.UseVisualStyleBackColor = True
         '
         'ToolStrip1
         '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripButton2, Me.ToolStripButton3, Me.ToolStripSeparator1, Me.ToolStripButton4, Me.ToolStripButton5})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripButton2, Me.ToolStripButton3, Me.ToolStripSeparator1, Me.ToolStripButton4, Me.ToolStripLabel1, Me.ToolStripButton5, Me.ToolStripComboBox1})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(266, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(299, 25)
         Me.ToolStrip1.TabIndex = 0
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -231,11 +234,18 @@ Partial Class Form1
         Me.ToolStripButton5.Size = New System.Drawing.Size(23, 22)
         Me.ToolStripButton5.Text = "Run InstaCal"
         '
+        'ToolStripLabel1
+        '
+        Me.ToolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.ToolStripLabel1.Name = "ToolStripLabel1"
+        Me.ToolStripLabel1.Size = New System.Drawing.Size(28, 22)
+        Me.ToolStripLabel1.Text = "info"
+        '
         'StatusStrip1
         '
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 428)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(266, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(299, 22)
         Me.StatusStrip1.TabIndex = 9
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -251,7 +261,7 @@ Partial Class Form1
         Me.ZedGraphControl1.ScrollMinX = 0R
         Me.ZedGraphControl1.ScrollMinY = 0R
         Me.ZedGraphControl1.ScrollMinY2 = 0R
-        Me.ZedGraphControl1.Size = New System.Drawing.Size(530, 450)
+        Me.ZedGraphControl1.Size = New System.Drawing.Size(497, 450)
         Me.ZedGraphControl1.TabIndex = 0
         Me.ZedGraphControl1.UseExtendedPrintDialog = True
         '
@@ -259,14 +269,24 @@ Partial Class Form1
         '
         Me.Timer1.Interval = 500
         '
-        'Form1
+        'ToolStripComboBox1
+        '
+        Me.ToolStripComboBox1.DropDownWidth = 140
+        Me.ToolStripComboBox1.Items.AddRange(New Object() {"1", "2", "5", "10", "15", "30", "60"})
+        Me.ToolStripComboBox1.Name = "ToolStripComboBox1"
+        Me.ToolStripComboBox1.Size = New System.Drawing.Size(75, 25)
+        Me.ToolStripComboBox1.Text = "1"
+        Me.ToolStripComboBox1.ToolTipText = "Messintervall"
+        '
+        'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.SplitContainer1)
-        Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Name = "Main"
+        Me.Text = "Main"
         Me.SplitContainer1.Panel1.ResumeLayout(False)
         Me.SplitContainer1.Panel1.PerformLayout()
         Me.SplitContainer1.Panel2.ResumeLayout(False)
@@ -297,4 +317,6 @@ Partial Class Form1
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents ToolStripButton4 As ToolStripButton
     Friend WithEvents ToolStripButton5 As ToolStripButton
+    Friend WithEvents ToolStripLabel1 As ToolStripLabel
+    Friend WithEvents ToolStripComboBox1 As ToolStripComboBox
 End Class

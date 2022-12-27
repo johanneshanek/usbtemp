@@ -52,5 +52,10 @@ usbtemp
   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:usbtemp.My.Resources.Resources.temperature_icon_icons_com_53617">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
 </members>
 </doc>

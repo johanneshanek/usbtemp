@@ -9,7 +9,7 @@ Imports System.Runtime.InteropServices
 ' Werte der Assemblyattribute überprüfen
 
 <Assembly: AssemblyTitle("usbtemp")>
-<Assembly: AssemblyDescription("")>
+<Assembly: AssemblyDescription("Dieses Programm ließt die Daten des USB-TEMP USB-Gerätes aus.")>
 <Assembly: AssemblyCompany("Blaues Sofa")>
 <Assembly: AssemblyProduct("usbtemp")>
 <Assembly: AssemblyCopyright("Copyright ©  2022")>

@@ -4,7 +4,6 @@ C:\Users\jopop\Source\Repos\usbtemp\usbtemp\bin\Debug\usbtemp.pdb
 C:\Users\jopop\Source\Repos\usbtemp\usbtemp\bin\Debug\usbtemp.xml
 C:\Users\jopop\Source\Repos\usbtemp\usbtemp\bin\Debug\MccDaq.dll
 C:\Users\jopop\Source\Repos\usbtemp\usbtemp\bin\Debug\MccDaq.xml
-C:\Users\jopop\Source\Repos\usbtemp\usbtemp\obj\Debug\usbtemp.Form1.resources
 C:\Users\jopop\Source\Repos\usbtemp\usbtemp\obj\Debug\usbtemp.Resources.resources
 C:\Users\jopop\Source\Repos\usbtemp\usbtemp\obj\Debug\usbtemp.vbproj.GenerateResource.cache
 C:\Users\jopop\Source\Repos\usbtemp\usbtemp\obj\Debug\usbtemp.vbproj.CoreCompileInputs.cache
@@ -33,3 +32,5 @@ C:\Users\jopop\Source\Repos\usbtemp\usbtemp\obj\Debug\usbtemp.exe.manifest
 C:\Users\jopop\Source\Repos\usbtemp\usbtemp\obj\Debug\usbtemp.application
 C:\Users\jopop\Source\Repos\usbtemp\usbtemp\obj\Debug\usbtemp.vbprojAssemblyReference.cache
 C:\Users\jopop\Source\Repos\usbtemp\usbtemp\bin\Debug\Resources\icalsetup.exe
+C:\Users\jopop\Source\Repos\usbtemp\usbtemp\obj\Debug\usbtemp.AboutBox1.resources
+C:\Users\jopop\Source\Repos\usbtemp\usbtemp\obj\Debug\usbtemp.Main.resources

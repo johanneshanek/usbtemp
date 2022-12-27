@@ -119,5 +119,15 @@ Namespace My.Resources
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property temperature_icon_icons_com_53617() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("temperature_icon-icons.com_53617", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
     End Module
 End Namespace
