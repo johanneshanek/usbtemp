@@ -165,6 +165,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="License-LGPL.txt" />
+    <None Include="Resources\icons8-exportieren-24.png" />
     <None Include="Resources\icons8-symbol_-löschen-24.png" />
     <None Include="Resources\icons8-stop-50.png" />
     <None Include="Resources\icons8-anfang-50.png" />
