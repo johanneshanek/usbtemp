@@ -32,3 +32,4 @@ C:\Users\jopop\Source\Repos\usbtemp\usbtemp\bin\Debug\usbtemp.application
 C:\Users\jopop\Source\Repos\usbtemp\usbtemp\obj\Debug\usbtemp.exe.manifest
 C:\Users\jopop\Source\Repos\usbtemp\usbtemp\obj\Debug\usbtemp.application
 C:\Users\jopop\Source\Repos\usbtemp\usbtemp\obj\Debug\usbtemp.vbprojAssemblyReference.cache
+C:\Users\jopop\Source\Repos\usbtemp\usbtemp\bin\Debug\Resources\icalsetup.exe

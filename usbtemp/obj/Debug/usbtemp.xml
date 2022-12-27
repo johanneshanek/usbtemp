@@ -22,6 +22,11 @@ usbtemp
   Ressourcenzuordnungen, die diese stark typisierte Ressourcenklasse verwenden.
 </summary>
 </member>
+<member name="P:usbtemp.My.Resources.Resources.icalsetup">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Byte[].
+</summary>
+</member>
 <member name="P:usbtemp.My.Resources.Resources.icons8_anfang_50">
 <summary>
   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
